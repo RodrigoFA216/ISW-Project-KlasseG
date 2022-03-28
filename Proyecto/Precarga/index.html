@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.queryloader2/3.2.2/jquery.queryloader2.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="porcentaje">
+        <div id="contenido">
+            <h1>el diseño UX es mi pasión</h1>
+            <img src="/Proyecto/Precarga/imgError404-02.gif" alt="a">
+        </div>
+    </div>
+    <style>
+        /* Preload */
+        #porcentaje {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #0099FF;
+            z-index: 9999;
+        }
+        /*Body*/
+        body {
+            background-color: #FD9558;
+            color: #778899;
+            font-family: 'Open Sans', sans-serif;
+            text-rendering: optimizelegibility;
+        }
+        #contenido{
+            align-items: center;
+            text-align: center;
+            margin: 30px;
+            background-color: #70AD47;
+            color: black;
+        }
+    </style>
+    <script>
+        $("body").queryLoader2({
+            barColor: "#555566",
+            backgroundColor: "#fff",
+            percentage: true,
+            barHeight: 1,
+            completeAnimation: "grow",
+            minimumTime: 200,
+            onLoadComplete: hidePreLoader
+        });
+
+        function hidePreLoader() {
+            $("#porcentaje").hide();
+        }
+    </script>
+
+</html>
+</body>
+
+</html>
